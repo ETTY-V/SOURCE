@@ -1503,13 +1503,13 @@ local aimDistanceFactorSlider = aimSec:AddSlider({
 
 local X = viewmodelSec:AddSlider({
 	Name = "X",
-	Flag = "aimDistanceFactorSliderFlag",
-	Value = 2,
+	Flag = "xFlag",
+	Value = 0,
 	Min = -2,
-	Max = 0,
+	Max = 2,
 	Callback = function(value)
 		values.radius["offsetx"] = value
-		print()
+		print(values.radius["offsetx"])
 	end
 })
 --]
