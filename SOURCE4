@@ -2084,7 +2084,7 @@ local rendertehnology = rendertehnologySec:AddDropdown({
 
 local Skybox  = worldSettingsSec:AddDropdown({
 	Name = "Skybox",
-	List = {'Spongebob','Galaxy','Legacy','ShadowMap','Unified','Voxel'},
+	List = {'Spongebob','Galaxy','GalaxyV2','GreenGreed','Lava','Default'},
 	Default = 'Legacy',
 	Flag = "rendertehnologyFlag",
 	Callback = function(value)
@@ -2107,6 +2107,46 @@ local Skybox  = worldSettingsSec:AddDropdown({
 				sky.SkyboxLf = 'http://www.roblox.com/asset/?id=159454286'
 				sky.SkyboxRt = 'http://www.roblox.com/asset/?id=159454300'
 				sky.SkyboxUp = 'http://www.roblox.com/asset/?id=159454288'
+			elseif values.misc["skybox"] == 'GalaxyV2' then
+				local sky = game:GetService("Lighting").Sky
+				sky.SkyboxBk = 'http://www.roblox.com/asset/?id=159248188'
+				sky.SkyboxDn = 'http://www.roblox.com/asset/?id=159248183'
+				sky.SkyboxFt = 'http://www.roblox.com/asset/?id=159248187'
+				sky.SkyboxLf = 'http://www.roblox.com/asset/?id=159248173'
+				sky.SkyboxRt = 'http://www.roblox.com/asset/?id=159248192'
+				sky.SkyboxUp = 'http://www.roblox.com/asset/?id=159248176'
+			elseif values.misc["skybox"] == 'Ukraine' then
+				local sky = game:GetService("Lighting").Sky
+				sky.SkyboxBk = 'http://www.roblox.com/asset/?version=1&id=1327358'
+				sky.SkyboxDn = 'http://www.roblox.com/asset/?version=1&id=1327359'
+				sky.SkyboxFt = 'http://www.roblox.com/asset/?version=1&id=1327355'
+				sky.SkyboxLf = 'http://www.roblox.com/asset/?version=1&id=1327357'
+				sky.SkyboxRt = 'http://www.roblox.com/asset/?version=1&id=1327356'
+				sky.SkyboxUp = 'http://www.roblox.com/asset/?version=1&id=1327360'
+			elseif values.misc["skybox"] == 'GreenGreed' then
+				local sky = game:GetService("Lighting").Sky
+				sky.SkyboxBk = 'http://www.roblox.com/asset/?version=1&id=1014472'
+				sky.SkyboxDn = 'http://www.roblox.com/asset/?version=1&id=1014472'
+				sky.SkyboxFt = 'http://www.roblox.com/asset/?version=1&id=1014472'
+				sky.SkyboxLf = 'http://www.roblox.com/asset/?version=1&id=1014472'
+				sky.SkyboxRt = 'http://www.roblox.com/asset/?version=1&id=1014472'
+				sky.SkyboxUp = 'http://www.roblox.com/asset/?version=1&id=1014472'
+			elseif values.misc["skybox"] == 'Lava' then
+				local sky = game:GetService("Lighting").Sky
+				sky.SkyboxBk = 'http://www.roblox.com/asset/?version=1&id=1012890'
+				sky.SkyboxDn = 'http://www.roblox.com/asset/?version=1&id=1012891'
+				sky.SkyboxFt = 'http://www.roblox.com/asset/?version=1&id=1012887'
+				sky.SkyboxLf = 'http://www.roblox.com/asset/?version=1&id=1012889'
+				sky.SkyboxRt = 'http://www.roblox.com/asset/?version=1&id=1012888'
+				sky.SkyboxUp = 'http://www.roblox.com/asset/?version=1&id=1014449'
+			elseif values.misc["skybox"] == 'Lava' then
+				local sky = game:GetService("Lighting").Sky
+				sky.SkyboxBk = 'http://www.roblox.com/asset/?version=1&id=1012890'
+				sky.SkyboxDn = 'http://www.roblox.com/asset/?version=1&id=1012891'
+				sky.SkyboxFt = 'http://www.roblox.com/asset/?version=1&id=1012887'
+				sky.SkyboxLf = 'http://www.roblox.com/asset/?version=1&id=1012889'
+				sky.SkyboxRt = 'http://www.roblox.com/asset/?version=1&id=1012888'
+				sky.SkyboxUp = 'http://www.roblox.com/asset/?version=1&id=1014449'
 			end
 		end
 	end,
