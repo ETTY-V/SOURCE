@@ -127,6 +127,7 @@ local values = {
 		ambientG = 0,
 		ambientB = 0,
 		time = 14,
+		guirgb = 0.5,
 	},
 	misc = {
 		tagsFont = 1,
@@ -548,7 +549,7 @@ local gui = guiSec:AddToggle({
 		values.enabled["guirgb"] = value
 
 		if not values.enabled["guirgb"] then
-			
+			 game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.TextColor3 = Color3.fromRGB(255, 255, 255)	
 		else
 			for i = 0, 255 do
 		            local r = math.sin(i * 0.01) * 127 + 128
@@ -556,7 +557,7 @@ local gui = guiSec:AddToggle({
 		            local b = math.sin(i * 0.01 + 4) * 127 + 128
 		            
 		            game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.TextColor3 = Color3.fromRGB(r, g, b)
-		            wait(0.03)
+		            wait(values.radius["guirgb"])
 		        end
 		end
 	end
@@ -1576,6 +1577,17 @@ local Z = viewmodelSec:AddSlider({
 			print(z)
 			v.HumanoidRootPart.PivotOffset = CFrame.new(currentPivot.Position.X, currentPivot.Position.Y, z)
 		end
+	end
+})
+
+local guirgbslider = guiSec:AddSlider({
+	Name = "Speed",
+	Flag = "guirgbspeedFlag",
+	Value = 0.5,
+	Min = 0.1,
+	Max = 1,
+	Callback = function(value)
+		values.radius["guirgb"] = value
 	end
 })
 
