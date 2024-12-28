@@ -421,7 +421,7 @@ local megaKnife = combatTab:CreateSection({Name = "MegaKnife", Side = "Left"})
 
 local megaBulletsSec = combatTab:CreateSection({Name = "MegaBullets", Side = "Right"})
 local miscCombatSec = combatTab:CreateSection({Name = "Misc", Sied = "Left"})
-local guiSec = micsTab:CreateSection({Name = "RGB Gui", Sied = "Left"})
+local guiSec = miscTab:CreateSection({Name = "RGB Gui", Sied = "Left"})
 
 local choiceSettingsSec = settingsTab:CreateSection({Name = "Settings", Side = "Right"})
 local miscSettingsSec = settingsTab:CreateSection({Name = "Misc", Side = "Left"})
