@@ -100,8 +100,6 @@ local values = {
 		clouds = false,
 		thirdperson = false,
 		guirgb = false,
-		guirgb2 = false,
-		guirgb3 = false,
 	},
 	distance = {
 		player = 1000,
@@ -554,55 +552,14 @@ local gui = guiSec:AddToggle({
 			 game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.TextColor3 = Color3.fromRGB(255, 255, 255)	
 		else
 			for i = 0, 255 do
+				if values.enabled["guirgb"] then
+					game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.TextColor3 = Color3.fromRGB(255, 255, 255)		
+				end
 		            local r = math.sin(i * 0.01) * 127 + 128
 		            local g = math.sin(i * 0.01 + 2) * 127 + 128
 		            local b = math.sin(i * 0.01 + 4) * 127 + 128
 		            
 		            game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.TextColor3 = Color3.fromRGB(r, g, b)
-		            wait(0.0005)
-		        end
-		end
-	end
-})
-
-local gui2 = guiSec:AddToggle({
-	Name = "Enabled",
-	Value = false,
-	Flag = 'gui2Flag',
-	Callback = function(value)
-		values.enabled["guirgb2"] = value
-
-		if not values.enabled["guirgb2"] then
-			 game:GetService("Players").LocalPlayer.PlayerGui.serverFPS.Frame.serverInfo.TextColor3 = Color3.fromRGB(255, 255, 255)	
-		else
-			for i = 0, 255 do
-		            local r = math.sin(i * 0.01) * 127 + 128
-		            local g = math.sin(i * 0.01 + 2) * 127 + 128
-		            local b = math.sin(i * 0.01 + 4) * 127 + 128
-		            
-		            game:GetService("Players").LocalPlayer.PlayerGui.serverFPS.Frame.serverInfo.TextColor3 = Color3.fromRGB(r, g, b)
-		            wait(0.0005)
-		        end
-		end
-	end
-})
-
-local gui3 = guiSec:AddToggle({
-	Name = "Enabled",
-	Value = false,
-	Flag = 'gui3Flag',
-	Callback = function(value)
-		values.enabled["guirgb3"] = value
-
-		if not values.enabled["guirgb3"] then
-			 game:GetService("Players").LocalPlayer.PlayerGui.clientFPS.Frame.serverInfo.TextColor3 = Color3.fromRGB(255, 255, 255)	
-		else
-			for i = 0, 255 do
-		            local r = math.sin(i * 0.01) * 127 + 128
-		            local g = math.sin(i * 0.01 + 2) * 127 + 128
-		            local b = math.sin(i * 0.01 + 4) * 127 + 128
-		            
-		            game:GetService("Players").LocalPlayer.PlayerGui.clientFPS.Frame.serverInfo.TextColor3 = Color3.fromRGB(r, g, b)
 		            wait(0.0005)
 		        end
 		end
@@ -1625,6 +1582,7 @@ local Z = viewmodelSec:AddSlider({
 		end
 	end
 })
+
 
 
 
