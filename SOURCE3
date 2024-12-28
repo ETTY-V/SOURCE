@@ -7,7 +7,7 @@ local Window = Library:CreateWindow({
 warn('0.7') --q5
 if game.Players.LocalPlayer.Name == 'FAFAF2a2' then
 	print('no')
-else:
+else
 	print('yes')
 end
 --[ VARIABLES
