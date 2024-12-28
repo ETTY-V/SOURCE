@@ -1511,7 +1511,7 @@ local X = viewmodelSec:AddSlider({
 		values.radius["offsetx"] = value
 		print(values.radius["offsetx"])
 		for i,v in pairs(game:GetService("ReplicatedStorage").ViewModels:GetChildren()) do
-			v.HumanoidRootPart.PivotOffset = v.HumanoidRootPart.PivotOffset * Vector3.new(0, values.radius["offsetx"] , 0)
+			v.HumanoidRootPart.PivotOffset += Vector3.new(0, values.radius["offsetx"] , 0)
 		end
 	end
 })
