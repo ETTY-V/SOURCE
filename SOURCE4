@@ -1584,10 +1584,11 @@ local guirgbslider = guiSec:AddSlider({
 	Name = "Speed",
 	Flag = "guirgbspeedFlag",
 	Value = 0.5,
-	Min = 0.1,
-	Max = 1,
+	Min = 1,
+	Max = 10,
 	Callback = function(value)
-		values.radius["guirgb"] = value
+		local val = values.radius["guirgb"] / 10
+		values.radius["guirgb"] = val
 	end
 })
 
