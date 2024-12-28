@@ -1518,6 +1518,44 @@ local X = viewmodelSec:AddSlider({
 		end
 	end
 })
+
+local Y = viewmodelSec:AddSlider({
+	Name = "Y",
+	Flag = "yFlag",
+	Value = 0,
+	Min = -10,
+	Max = 10,
+	Callback = function(value)
+		values.radius["offsety"] = value
+		print(values.radius["offsety"])
+		for i,v in pairs(game:GetService("ReplicatedStorage").ViewModels:GetChildren()) do
+			local currentPivot = v.HumanoidRootPart.PivotOffset
+			local y = values.radius["offsety"] / 10
+			print(y)
+			v.HumanoidRootPart.PivotOffset = CFrame.new(currentPivot.Position.X, y, currentPivot.Position.Z)
+		end
+	end
+})
+
+local Z = viewmodelSec:AddSlider({
+	Name = "Z",
+	Flag = "zFlag",
+	Value = 0,
+	Min = -10,
+	Max = 10,
+	Callback = function(value)
+		values.radius["offsetz"] = value
+		print(values.radius["offsetz"])
+		for i,v in pairs(game:GetService("ReplicatedStorage").ViewModels:GetChildren()) do
+			local currentPivot = v.HumanoidRootPart.PivotOffset
+			local z = values.radius["offsetz"] / 10
+			print(z)
+			v.HumanoidRootPart.PivotOffset = CFrame.new(currentPivot.Position.X, currentPivot.Position.Y, z)
+		end
+	end
+})
+
+
 --]
 
 --[ KEYBINDS
