@@ -1501,7 +1501,7 @@ local aimDistanceFactorSlider = aimSec:AddSlider({
 	end
 })
 
-local X = viewmodel:AddSlider({
+local X = viewmodelSec:AddSlider({
 	Name = "X",
 	Flag = "aimDistanceFactorSliderFlag",
 	Value = 2,
