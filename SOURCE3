@@ -1507,7 +1507,6 @@ local X = viewmodelSec:AddSlider({
 	Value = 0,
 	Min = 0,
 	Max = 2,
-	Decimals = 0.1,
 	Callback = function(value)
 		values.radius["offsetx"] = value
 		print(values.radius["offsetx"])
