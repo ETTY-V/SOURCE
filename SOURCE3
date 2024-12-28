@@ -2084,7 +2084,7 @@ local rendertehnology = rendertehnologySec:AddDropdown({
 
 local Skybox  = worldSettingsSec:AddDropdown({
 	Name = "Skybox",
-	List = {'Spongebob','Galaxy','GalaxyV2','GreenGreed','Lava','Default'},
+	List = {'Spongebob','Galaxy','GalaxyV2','GreenGreed','Lava','Ukraine','Default'},
 	Default = 'Legacy',
 	Flag = "rendertehnologyFlag",
 	Callback = function(value)
