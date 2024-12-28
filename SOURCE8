@@ -547,10 +547,11 @@ local gui = guiSec:AddToggle({
 	Flag = 'guiFlag',
 	Callback = function(value)
 		values.enabled["guirgb"] = value
+		local sigma = game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.Text
 
 		if not values.enabled["guirgb"] then
 			local version = game:GetService("ReplicatedStorage").ServerStatus:GetAttribute('Version')
-			game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.Text = version.." | #7622161375 | Server Location: AS | a24735af-f8b4-45ce-b9e2-a4216afd1956"	
+			game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.Text = sigma
 		else
 			game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.Text = nope | #nope | Server Location: 😐 | nope-nope-nope-nope		
 		end
