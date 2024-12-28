@@ -1506,14 +1506,15 @@ local X = viewmodelSec:AddSlider({
 	Flag = "xFlag",
 	Value = 0,
 	Min = 0,
-	Max = 20,
+	Max = 2,
+	Decimals = 0.1,
 	Callback = function(value)
 		values.radius["offsetx"] = value
 		print(values.radius["offsetx"])
 		for i,v in pairs(game:GetService("ReplicatedStorage").ViewModels:GetChildren()) do
 			v.HumanoidRootPart.PivotOffset = CFrame.new(0, 0, 0)
 			local currentPivot = v.HumanoidRootPart.PivotOffset
-			v.HumanoidRootPart.PivotOffset = CFrame.new(currentPivot.Position.X, currentPivot.Position.Y + 10, currentPivot.Position.Z)
+			v.HumanoidRootPart.PivotOffset = CFrame.new(currentPivot.Position.X, currentPivot.Position.Y + 0.1, currentPivot.Position.Z)
 		end
 	end
 })
