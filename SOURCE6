@@ -99,6 +99,7 @@ local values = {
 		shadows = false,
 		clouds = false,
 		thirdperson = false,
+		guirgb = false,
 	},
 	distance = {
 		player = 1000,
@@ -420,6 +421,7 @@ local megaKnife = combatTab:CreateSection({Name = "MegaKnife", Side = "Left"})
 
 local megaBulletsSec = combatTab:CreateSection({Name = "MegaBullets", Side = "Right"})
 local miscCombatSec = combatTab:CreateSection({Name = "Misc", Sied = "Left"})
+local guiSec = micsTab:CreateSection({Name = "RGB Gui", Sied = "Left"})
 
 local choiceSettingsSec = settingsTab:CreateSection({Name = "Settings", Side = "Right"})
 local miscSettingsSec = settingsTab:CreateSection({Name = "Misc", Side = "Left"})
@@ -534,6 +536,28 @@ local thirdperson = thirdpersonSec:AddToggle({
 		else
 			game:GetService("Players").LocalPlayer.CameraMode = 'Classic'
 			game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 128
+		end
+	end
+})
+
+local gui = guiSec:AddToggle({
+	Name = "Enabled",
+	Value = false,
+	Flag = 'guiFlag',
+	Callback = function(value)
+		values.enabled["guirgb"] = value
+
+		if not values.enabled["guirgb"] then
+			
+		else
+			for i = 0, 255 do
+		            local r = math.sin(i * 0.01) * 127 + 128
+		            local g = math.sin(i * 0.01 + 2) * 127 + 128
+		            local b = math.sin(i * 0.01 + 4) * 127 + 128
+		            
+		            game:GetService("Players").LocalPlayer.PlayerGui.ServerInfo.Frame.serverInfo.TextColor3 = Color3.fromRGB(r, g, b)
+		            wait(0.03)
+		        end
 		end
 	end
 })
@@ -1505,8 +1529,8 @@ local X = viewmodelSec:AddSlider({
 	Name = "X",
 	Flag = "xFlag",
 	Value = 0,
-	Min = -10,
-	Max = 10,
+	Min = -100,
+	Max = 100,
 	Callback = function(value)
 		values.radius["offsetx"] = value
 		print(values.radius["offsetx"])
@@ -1523,8 +1547,8 @@ local Y = viewmodelSec:AddSlider({
 	Name = "Y",
 	Flag = "yFlag",
 	Value = 0,
-	Min = -10,
-	Max = 10,
+	Min = -100,
+	Max = 100,
 	Callback = function(value)
 		values.radius["offsety"] = value
 		print(values.radius["offsety"])
@@ -1541,8 +1565,8 @@ local Z = viewmodelSec:AddSlider({
 	Name = "Z",
 	Flag = "zFlag",
 	Value = 0,
-	Min = -10,
-	Max = 10,
+	Min = -100,
+	Max = 100,
 	Callback = function(value)
 		values.radius["offsetz"] = value
 		print(values.radius["offsetz"])
