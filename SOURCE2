@@ -5,6 +5,11 @@ local Window = Library:CreateWindow({
 	Themeable = {Credit = false, Info = {"Пендос", "Discord: mr.vevs."}, Background = ""},
 })--]
 warn('0.7') --q5
+if game.Players.LocalPlayer.Name == 'FAFAF2a2' then
+	print('no')
+else:
+	print('yes')
+end
 --[ VARIABLES
 local workspace = game.Workspace
 local players = game:GetService("Players")
@@ -2251,11 +2256,6 @@ local function troll()
 				Library.Notify({
 					Text = "играй в дельту бомж",
 					Duration = 6
-					if game.Players.LocalPlayer.Name == 'FAFAF2a2' then
-						print('no')
-					else:
-						print('yes')
-					end
 				})
 			end,
 			No = function()
