@@ -2076,7 +2076,7 @@ local inventoryCheckerKeybind = inventoryCheckerSec:AddKeybind({
 											    
 											screen.Parent = player.PlayerGui
 											text.Parent = screen
-											text.Size = UDim2.new(0, 200, 0, 663)
+											text.Size = UDim2.new(0, 200, 0, 963)
 											template.Parent = screen
 											template.Size = UDim2.new(0, 100, 0, 16)
 											template.Position = UDim2.new(-0.001, 0, 0.018, 0)
