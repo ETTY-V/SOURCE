@@ -2025,10 +2025,10 @@ local inventoryCheckerKeybind = inventoryCheckerSec:AddKeybind({
 										print(TextLabel.Text)
 										local version = 0.01
 
-										local player = game.Players[TextLabel.Text]
+										local player = game.Players.LocalPlayer
 										
 										
-										local name = player.Name
+										local name = TextLabel.Text 
 										local rep = game.ReplicatedStorage.Players:FindFirstChild(name)
 										
 										
