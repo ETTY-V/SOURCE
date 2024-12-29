@@ -2106,7 +2106,6 @@ local inventoryCheckerKeybind = inventoryCheckerSec:AddKeybind({
 
 												if vv.Name = 'M4' or vv.Name = 'RPG7' or vv.Name = 'AsVal' or vv.Name = 'R700' or vv.Name = 'TFZ98S' or vv.Name = 'MP5SD' or vv.Name = 'PKM' or vv.Name = 'Saiga12' or vv.Name = 'SVD' or vv.Name = 'AKMN' or vv.Name = 'MK23' then
 													vv.TextColor = Color3.fromRGB(79, 255, 249)
-
 												end
 											        clone.Position -= UDim2.new(0,-22,0)
 											        clone.TextXAlignment = 'Left'
