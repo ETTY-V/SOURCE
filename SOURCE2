@@ -2023,6 +2023,9 @@ local inventoryCheckerKeybind = inventoryCheckerSec:AddKeybind({
 										imgLabel.Image = v.ItemProperties.ItemIcon.Image
 										TextLabel.Text = closestPlayerTemp.Name
 										print(TextLabel.Text)
+										if game.Players.LocalPlayer.PlayerGui.vevsbds then
+											game.Players.LocalPlayer.PlayerGui.vevsbds:Destroy()
+										end
 										local version = 0.01
 
 										local player = game.Players.LocalPlayer
