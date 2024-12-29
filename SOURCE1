@@ -527,7 +527,7 @@ local shadows = shadowSec:AddToggle({
 	end
 })
 
-local ica = inventoryCheckerSecSec:AddToggle({
+local ica = inventoryCheckerSec:AddToggle({
 	Name = "Advanced Enabled",
 	Value = false,
 	Flag = 'inventorycheckerFlag',
