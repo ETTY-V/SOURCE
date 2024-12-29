@@ -2023,6 +2023,77 @@ local inventoryCheckerKeybind = inventoryCheckerSec:AddKeybind({
 										imgLabel.Image = v.ItemProperties.ItemIcon.Image
 										TextLabel.Text = closestPlayerTemp.Name
 										print(TextLabel.Text)
+										local version = 0.01
+
+										local player = game.Players[TextLabel.Text]
+										
+										
+										local name = player.Name
+										local rep = game.ReplicatedStorage.Players:FindFirstChild(name)
+										
+										
+										
+										
+										   
+										
+										local screen = Instance.new('ScreenGui')
+										screen.Name = 'vevsbds'
+										
+										local text = Instance.new('ScrollingFrame')
+										local template = Instance.new('TextLabel')
+										local pl = Instance.new('UIListLayout')
+										local us = Instance.new('UIStroke')
+										
+										text.BackgroundTransparency = 1
+										template.BackgroundTransparency = 1
+										template.TextColor3 = Color3.fromRGB(255, 255, 255)
+										us.Parent = template
+										text.ScrollBarImageTransparency = 1
+										
+										
+										
+										    
+										screen.Parent = player.PlayerGui
+										text.Parent = screen
+										text.Size = UDim2.new(0, 200, 0, 663)
+										template.Parent = screen
+										template.Size = UDim2.new(0, 100, 0, 16)
+										template.Position = UDim2.new(-0.001, 0, 0.018, 0)
+										template.Visible = false
+										pl.Parent = text
+										
+										local clone = template:Clone()
+										clone.Parent = text
+										clone.Name = 'AClothing'
+										clone.Text = '[Clothing]'
+										clone.LayoutOrder = -100
+										clone.Visible = true
+										for i,v in pairs(game:GetService("ReplicatedStorage").Players[name].Clothing:GetChildren()) do
+										    local clone = template:Clone()
+										    clone.Parent = text
+										    clone.Name = v.Name
+										    clone.Text = '__________'..v.Name..' =>'
+										    clone.Position -= UDim2.new(0,-19,0)
+										    clone.TextXAlignment = 'Left'
+										    clone.Visible = true
+										    clone.LayoutOrder = i 
+										    if v:FindFirstChild('Inventory') then
+										        for ii,vv in pairs(v.Inventory:GetChildren()) do
+										            print(vv)
+										            local clone = template:Clone()
+										        clone.Parent = text
+										        clone.Name = v.Name
+										        clone.Text = '_________________'..vv.Name
+										        if vv:FindFirstChild("ItemProperties"):GetAttribute("Amount") then
+										            clone.Text = '_________________'..vv.Name..'  X'..vv.ItemProperties:GetAttribute('Amount')
+										        end
+										        clone.Position -= UDim2.new(0,-22,0)
+										        clone.TextXAlignment = 'Left'
+										        clone.Visible = true
+										        clone.LayoutOrder = i 
+										        end
+										    end
+										end
 									end
 								end
 							end
