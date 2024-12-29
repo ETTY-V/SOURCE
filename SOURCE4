@@ -2083,12 +2083,7 @@ local inventoryCheckerKeybind = inventoryCheckerSec:AddKeybind({
 											template.Visible = false
 											pl.Parent = text
 											
-											local clone = template:Clone()
-											clone.Parent = text
-											clone.Name = 'AClothing'
-											clone.Text = '[Clothing]'
-											clone.LayoutOrder = -100
-											clone.Visible = true
+											
 											for i,v in pairs(game:GetService("ReplicatedStorage").Players[name].Clothing:GetChildren()) do
 											    local clone = template:Clone()
 											    clone.Parent = text
