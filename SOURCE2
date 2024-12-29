@@ -533,6 +533,11 @@ local ica = inventoryCheckerSec:AddToggle({
 	Flag = 'inventorycheckerFlag',
 	Callback = function(value)
 		values.misc["advanced"] = value
+		if not values.misc["advanced"] then
+			if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("vevsbds") then
+				game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("vevsbds"):Destroy()
+			end
+		end	
 	end
 })
 
